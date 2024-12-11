@@ -1,0 +1,91 @@
+﻿@{
+    ViewData["Title"] = "Product Page";
+}
+<div class="banner">
+    <img alt="Old fashioned bag" src="~/images/product.jpg" decoding="async" data-nimg="1" class="banner__image" style="color: transparent;" />
+    <div class="banner__overlay"><h2 class="banner__title __className_555963">products</h2></div>
+</div>
+<!-- Breadcrumb -->
+<nav aria-label="breadcrumb">
+
+    <ol class="breadcrumb mt-4">
+
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Products</li>
+    </ol>
+</nav>
+<div class="container">
+    <!-- Categories -->
+    <div class="product-category">
+        <button class="btn btn-primary" onclick="filterProducts('all')">All</button>
+        <button class="btn btn-danger" onclick="filterProducts('backpack')">Backpack</button>
+        <button class="btn btn-danger" onclick="filterProducts('duffle')">Duffle Bag</button>
+        <button class="btn btn-danger" onclick="filterProducts('hiking')">Hiking Bag</button>
+        <button class="btn btn-danger" onclick="filterProducts('laptop')">Laptop Bag</button>
+        <button class="btn btn-danger" onclick="filterProducts('luggage')">Luggage</button>
+    </div>
+
+    <!-- Product List -->
+    <div class="row product-list" id="productList">
+        <div class="col-md-3 product-item" data-category="backpack">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://via.placeholder.com/300" class="card-img-top" alt="Backpack">
+                    </div>
+                    <div class="card-back">
+                        <p>Details about the Backpack</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 product-item" data-category="duffle">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://via.placeholder.com/300" class="card-img-top" alt="Duffle Bag">
+                    </div>
+                    <div class="card-back">
+                        <p>Details about the Duffle Bag</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 product-item" data-category="hiking">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://via.placeholder.com/300" class="card-img-top" alt="Hiking Bag">
+                    </div>
+                    <div class="card-back">
+                        <p>Details about the Hiking Bag</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 product-item" data-category="laptop">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://via.placeholder.com/300" class="card-img-top" alt="Laptop Bag">
+                    </div>
+                    <div class="card-back">
+                        <p>Details about the Laptop Bag</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function filterProducts(category) {
+        const products = document.querySelectorAll('.product-item');
+        products.forEach(product => {
+            if (category === 'all' || product.getAttribute('data-category') === category) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    }
+</script>

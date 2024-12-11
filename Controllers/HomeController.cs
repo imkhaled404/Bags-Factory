@@ -16,6 +16,10 @@ namespace BagsFactory.Controllers
         public IActionResult Index()
         {
             return View();
+        }  
+        public IActionResult Product()
+        {
+            return View();
         }
 
         public IActionResult Privacy()
